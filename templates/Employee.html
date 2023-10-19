@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" href="{{ url_for('static', filename='css/mybutton.css') }}" rel="stylesheet">
+    <title>管理页面</title>
+</head>
+<body>
+    <div class="parent">   
+        <div class="main">
+            <h3>欢迎登陆职工管理系统</h3>
+            <h3>你的 id: {{ id }}</h3>
+            <p>
+                <table border="1" style="margin: auto;" width='110%'>
+                    <tr>
+                        <th>选择</th>
+                        <th>功能</th>
+                    </tr>
+                    <tr>
+                        <th>1.修改 </t>
+                        <th> 进入此功能内修改自己的信息 </th>
+                    </tr>
+                    <tr>
+                        <th>2.查看 </th>
+                        <th> 进入此功能查询自己的信息 </th>
+                    </tr>
+                    <tr>
+                        <th>3.注销 </th>
+                        <th> 退出系统 </th>
+                    </tr>
+
+                </table>
+            </p>
+
+            <button onclick="location.href= '{{ url_for('EmployeeShow', user=user, id=id) }}' ">查看</button>
+            <button onclick="location.href= '{{ url_for('EmployeeEdit', user=user, id=id) }}' ">修改</button>
+            <button onclick="location.href= '{{ url_for('LogoutHandle', user=user, id=id) }}' ">注销</button>
+
+        </div>
+    </div>
+</body>
+</html>

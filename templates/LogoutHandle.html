@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注销</title>
+</head>
+<body>
+    <script type = "text/javascript">
+        var result = window.confirm("注销");
+        if(result){
+            window.location.href= "{{ url_for('Logout', user=user, id=id) }}"
+        }
+        else{
+            window.location.href= "{{ url_for(whatmanage, user=user, id=id) }}"
+        }
+    </script>
+</body>
+</html>

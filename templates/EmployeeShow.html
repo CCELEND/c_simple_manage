@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" href="{{ url_for('static', filename='css/mybutton.css') }}" rel="stylesheet">
+    <title>职工信息</title>
+</head>
+<body>
+    <p>
+        <table border = 1 align="center">
+            {% for key, value in Employee.items() %}
+            <tr>
+                <th> {{ key }} </th>
+                <td> {{ value }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </p>
+    <div class="main1">
+        <button onclick="location.href= '{{ url_for('Employee', user=user, id=id) }}' ">返回</button>
+    </div>
+</body>
+</html>

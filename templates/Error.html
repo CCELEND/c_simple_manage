@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>error</title>
+</head>
+<body>
+    {% if myurl %}
+    <script type = "text/javascript">
+        alert("{{errorinfo}}")
+        window.location.href= "{{ url_for(myurl, user=user, id=id) }}"
+    </script>
+    {% else %}
+    <script type = "text/javascript">
+        alert("{{errorinfo}}")
+        window.location.href = "{{ url_for('Login') }}"
+    </script>
+    {% endif %}
+</body>
+</html>

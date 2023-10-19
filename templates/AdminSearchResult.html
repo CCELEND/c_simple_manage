@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" href="{{ url_for('static', filename='css/mybutton.css') }}" rel="stylesheet">
+    <title>搜索结果</title>
+</head>
+<body>
+    {% if Employee %}
+    <h3 style="text-align: center;">职工信息</h3>
+        <p>
+        <table border = 1 align="center">
+            {% for user in Employee %}
+                {% for key, value in user.items() %}
+                <tr>
+                    <th> {{ key }} </th>
+                    <td> {{ value }}</td>
+                </tr>
+                {% endfor %}
+            {% endfor %}
+        </table>
+        </p>
+    {% else %}
+        <script type = "text/javascript">
+            alert("没有此职工！请重新输入信息")
+            window.location.href= "{{ url_for('AdminSearch', user=user, id=id) }}"
+        </script>
+    {% endif %}
+    <div class="main1">
+        <button onclick="location.href= '{{ url_for('AdminSearch', user=user, id=id) }}' ">返回</button>
+    </div>
+</body>
+</html>

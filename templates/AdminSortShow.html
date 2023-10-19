@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" href="{{ url_for('static', filename='css/mybutton.css') }}" rel="stylesheet">
+    <title>排序结果</title>
+</head>
+<body>
+    <h3 style="text-align: center;">职工信息排序</h3>
+    <p>
+        <table border = 1 align="center">
+            {% for user in Employee %}
+                {% for key, value in user.items() %}
+                <tr>
+                    <th> {{ key }} </th>
+                    <td> {{ value }}</td>
+                </tr>
+                {% endfor %}
+            {% endfor %}
+        </table>
+    </p>
+    <div class="main1">
+        <button onclick="location.href= '{{ url_for('AdminSort', user=user, id=id) }}' ">返回</button>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" href="{{ url_for('static', filename='css/mybutton.css') }}" rel="stylesheet">
+    <title>编辑信息</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="main">
+            <h3>信息修改</h3>
+            <form action="{{ url_for('EmployeeEditHandle', user=user, id=id) }}" method="post">
+                <p>
+                    <label for="name">姓名</label>
+                    <input type="text" id='name' name='name' placeholder= "{{ Employee['姓名'] }}" >
+                </p>
+                <p>
+                    <label for="sex">性别</label>
+                    <input type="text" id='sex' name='sex' placeholder= "{{ Employee['性别'] }}">
+                </p>
+                <p>
+                    <label for="birth">生日</label>
+                    <input type="text" id='birth' name='birth' placeholder= "{{ Employee['出生年月'] }}">
+                </p>
+                <p>
+                    <label for="education">学历</label>
+                    <input type="text" id='education' name='education' placeholder= "{{ Employee['学历'] }}">
+                </p>
+                <p>
+                    <label for="address">住址</label>
+                    <input type="text" id='address' name='address' placeholder= "{{ Employee['住址'] }}">
+                </p>
+                <p>
+                    <label for="phone">电话</label>
+                    <input type="text" id='phone' name='phone' placeholder= "{{ Employee['电话'] }}">
+                </p>
+        
+                <p>
+                    <input type="submit" value="确认" style="padding-right: 15px; width: 120px;">
+                </p>
+            </form>
+            <button onclick="location.href= '{{ url_for('Employee', user=user, id=id) }}' ">返回</button>
+        </div>
+    </div>
+</body>
+</html>
